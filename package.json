@@ -1,0 +1,33 @@
+{
+  "name": "dcm-1-apisolo_pj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "lint": "eslint --fix --ext .js .",
+    "test": "mocha --exit && npm run lint",
+    "migrate": "knex migrate:latest",
+    "migrate1": "knex migrate:make update_phone_table",
+    "seed": "knex seed:run"
+  },
+  "author": "Keita Katsuno",
+  "license": "ISC",
+  "dependencies": {
+    "chai-http": "^4.3.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "knex": "^2.4.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.36.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.7"
+  }
+}
