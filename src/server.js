@@ -15,7 +15,7 @@ const setUpServer = () => {
       result = await phoneModel.getOne(id);
     }
     let response = [];
-    response.push({ message: "Get complete" });
+    response.push({ responseCode: "0000", message: "Get complete" });
     response.push(result);
     res.type("json").send(response);
   });
@@ -28,7 +28,7 @@ const setUpServer = () => {
     const addData = await phoneModel.getOne(result);
     console.log(addData);
     let response = [];
-    response.push({ message: "Add complete" });
+    response.push({ responseCode: "0000", message: "Add complete" });
     response.push(addData);
     res.status(201).send(response);
   });
@@ -39,7 +39,7 @@ const setUpServer = () => {
     const patchData = await phoneModel.getOne(result);
 
     let response = [];
-    response.push({ message: "Patch complete" });
+    response.push({ responseCode: "0000", message: "Patch complete" });
     response.push(patchData);
     res.send(response);
   });
@@ -62,7 +62,7 @@ const setUpServer = () => {
     }
     const putData = await phoneModel.getOne(result);
     let response = [];
-    response.push({ message: "Put complete" });
+    response.push({ responseCode: "0000", message: "Put complete" });
     response.push(putData);
     res.send(response);
   });
@@ -72,7 +72,7 @@ const setUpServer = () => {
     const result = await phoneModel.deletePhone(body);
     const allData = await phoneModel.getAll();
     let response = [];
-    response.push({ message: "Delete complete" });
+    response.push({ responseCode: "0000", message: "Delete complete" });
     response.push(allData);
     res.send(response);
   });
